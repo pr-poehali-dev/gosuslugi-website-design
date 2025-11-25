@@ -22,11 +22,7 @@ const Index = () => {
     { id: 4, title: 'Подать заявление', description: 'В органы власти', icon: 'FileSignature', color: 'bg-purple-500' },
   ];
 
-  const payments = [
-    { id: 1, title: 'Оплата ЖКХ', amount: '5 420 ₽', date: '15.11.2025', status: 'Оплачено' },
-    { id: 2, title: 'Штраф ГИБДД', amount: '500 ₽', date: '10.11.2025', status: 'Оплачено' },
-    { id: 3, title: 'Госпошлина', amount: '2 000 ₽', date: 'Не оплачено', status: 'Ожидает' },
-  ];
+
 
   const applications = [
     { id: 1, title: 'Замена паспорта', date: '20.11.2025', status: 'В обработке', number: '№ 2024-11-001' },
@@ -41,7 +37,7 @@ const Index = () => {
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16">
                 <img 
-                  src="https://cdn.poehali.dev/files/455614a3-9e79-47df-9b4f-72f0db8ccf2b.jpg" 
+                  src="https://cdn.poehali.dev/files/f65f17a0-1799-441f-8fe8-576de5d38d95.jpg" 
                   alt="Госуслуги логотип" 
                   className="w-full h-full object-contain"
                 />
@@ -78,7 +74,7 @@ const Index = () => {
         </div>
 
         <Tabs defaultValue="services" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 h-auto p-1">
+          <TabsList className="grid w-full grid-cols-3 h-auto p-1">
             <TabsTrigger value="services" className="flex flex-col gap-1 py-3">
               <Icon name="Grid3x3" size={20} />
               <span className="text-xs">Услуги</span>
@@ -90,10 +86,6 @@ const Index = () => {
             <TabsTrigger value="applications" className="flex flex-col gap-1 py-3">
               <Icon name="FileCheck" size={20} />
               <span className="text-xs">Заявления</span>
-            </TabsTrigger>
-            <TabsTrigger value="payments" className="flex flex-col gap-1 py-3">
-              <Icon name="CreditCard" size={20} />
-              <span className="text-xs">Платежи</span>
             </TabsTrigger>
           </TabsList>
 
@@ -221,62 +213,7 @@ const Index = () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="payments" className="space-y-4 animate-fade-in">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span>История платежей</span>
-                  <Button size="sm">
-                    <Icon name="Plus" size={16} className="mr-2" />
-                    Новый платеж
-                  </Button>
-                </CardTitle>
-                <CardDescription>Все платежи и задолженности</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {payments.map((payment) => (
-                  <div key={payment.id} className="flex items-center justify-between p-4 border-2 rounded-xl hover:border-blue-200 transition-colors">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                        <Icon name="DollarSign" className="text-green-600" size={24} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg">{payment.title}</h3>
-                        <p className="text-sm text-gray-600">{payment.date}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xl font-bold mb-2">{payment.amount}</p>
-                      <Badge
-                        variant={payment.status === 'Оплачено' ? 'default' : 'destructive'}
-                      >
-                        {payment.status}
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
 
-            <Card className="bg-gradient-to-r from-red-500 to-orange-500 text-white border-0">
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                      <Icon name="AlertCircle" className="text-white" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">Есть неоплаченные счета</h3>
-                      <p className="text-sm text-white/80">Госпошлина • 2 000 ₽</p>
-                    </div>
-                  </div>
-                  <Button variant="secondary" size="lg" className="bg-white text-red-600 hover:bg-white/90">
-                    Оплатить
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
         </Tabs>
       </main>
 
