@@ -40,11 +40,11 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl transform rotate-45"></div>
-                <div className="absolute inset-1 bg-white rounded-2xl transform rotate-45"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Home" className="text-blue-600" size={28} />
-                </div>
+                <img 
+                  src="https://cdn.poehali.dev/files/455614a3-9e79-47df-9b4f-72f0db8ccf2b.jpg" 
+                  alt="Госуслуги логотип" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-blue-900">Госуслуги</h1>
