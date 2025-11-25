@@ -37,7 +37,7 @@ const Index = () => {
             <div className="flex items-center gap-4">
               <div className="relative w-16 h-16">
                 <img 
-                  src="https://cdn.poehali.dev/files/f65f17a0-1799-441f-8fe8-576de5d38d95.jpg" 
+                  src="https://cdn.poehali.dev/projects/d3621c81-63b9-42f2-a118-ee53ce1610fe/files/76c7ac95-7963-4efe-9813-aaa37ee72bd6.jpg" 
                   alt="Госуслуги логотип" 
                   className="w-full h-full object-contain"
                 />
