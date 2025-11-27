@@ -36,11 +36,15 @@ const Index = () => {
         <div className="absolute top-0 -right-4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
-      <header className="bg-gradient-to-r from-white via-white to-blue-600 border-b border-white/20 shadow-xl sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <header className="relative border-b border-white/20 shadow-xl sticky top-0 z-50 overflow-hidden">
+        <div className="absolute inset-0 flex">
+          <div className="w-1/2 bg-white"></div>
+          <div className="w-1/2 bg-blue-600"></div>
+        </div>
+        <div className="container mx-auto px-4 py-4 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="relative w-16 h-16 bg-white rounded-xl p-2">
+              <div className="relative w-16 h-16 bg-white rounded-xl p-2 shadow-md">
                 <img 
                   src="https://cdn.poehali.dev/files/f65f17a0-1799-441f-8fe8-576de5d38d95.jpg" 
                   alt="Госуслуги логотип" 
