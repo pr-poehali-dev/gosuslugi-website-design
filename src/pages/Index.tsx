@@ -152,23 +152,23 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {documents.map((doc) => (
-                  <div key={doc.id} className="flex items-center justify-between p-4 border-2 rounded-xl hover:border-blue-200 transition-colors">
+                  <div key={doc.id} className="flex items-center justify-between p-6 border-0 rounded-2xl bg-gradient-to-br from-white to-blue-50 hover:shadow-xl transition-all hover:-translate-y-1">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                        <Icon name={doc.icon} className="text-blue-600" size={24} />
+                      <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
+                        <Icon name={doc.icon} className="text-white" size={24} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg">{doc.type}</h3>
+                        <h3 className="font-bold text-lg">{doc.type}</h3>
                         <p className="text-sm text-gray-600">
                           {doc.series ? `${doc.series} ` : ''}{doc.number}
                         </p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <Badge variant={doc.status === 'Активен' ? 'default' : 'secondary'} className="mb-2">
+                      <Badge variant={doc.status === 'Активен' ? 'default' : 'secondary'} className="mb-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0">
                         {doc.status}
                       </Badge>
-                      <Button variant="ghost" size="sm">
+                      <Button variant="ghost" size="sm" className="hover:bg-blue-100">
                         <Icon name="Eye" size={16} className="mr-2" />
                         Открыть
                       </Button>
@@ -193,13 +193,13 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {applications.map((app) => (
-                  <div key={app.id} className="flex items-start justify-between p-4 border-2 rounded-xl hover:border-blue-200 transition-colors">
+                  <div key={app.id} className="flex items-start justify-between p-6 border-0 rounded-2xl bg-gradient-to-br from-white to-gray-50 hover:shadow-xl transition-all hover:-translate-y-1">
                     <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Icon name="FileSignature" className="text-purple-600" size={24} />
+                      <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <Icon name="FileSignature" className="text-white" size={24} />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-1">{app.title}</h3>
+                        <h3 className="font-bold text-lg mb-1">{app.title}</h3>
                         <p className="text-sm text-gray-600 mb-2">{app.number}</p>
                         <p className="text-xs text-gray-500">Подано: {app.date}</p>
                       </div>
@@ -207,7 +207,7 @@ const Index = () => {
                     <div className="text-right">
                       <Badge
                         variant={app.status === 'Одобрено' ? 'default' : 'secondary'}
-                        className={app.status === 'В обработке' ? 'bg-orange-500' : ''}
+                        className={app.status === 'В обработке' ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white border-0' : 'bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0'}
                       >
                         {app.status}
                       </Badge>
