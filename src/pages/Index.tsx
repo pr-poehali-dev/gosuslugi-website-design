@@ -30,8 +30,13 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      <header className="bg-white border-b border-blue-100 shadow-sm sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 -left-4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+      <header className="bg-white/95 backdrop-blur-lg border-b border-white/20 shadow-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -59,7 +64,7 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 relative z-10">
         <div className="mb-8">
           <div className="relative">
             <Icon name="Search" className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
@@ -92,7 +97,7 @@ const Index = () => {
           <TabsContent value="services" className="space-y-6 animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {services.map((service) => (
-                <Card key={service.id} className="hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer border-2 hover:border-blue-200">
+                <Card key={service.id} className="hover:shadow-2xl transition-all hover:-translate-y-2 cursor-pointer border-0 bg-white/90 backdrop-blur-sm hover:bg-white">
                   <CardHeader>
                     <div className={`w-12 h-12 ${service.color} rounded-xl flex items-center justify-center mb-3`}>
                       <Icon name={service.icon} className="text-white" size={24} />
@@ -104,7 +109,7 @@ const Index = () => {
               ))}
             </div>
 
-            <Card className="bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+            <Card className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white shadow-2xl border-0">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-white">
                   <Icon name="Sparkles" size={24} />
@@ -134,7 +139,7 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="documents" className="space-y-4 animate-fade-in">
-            <Card>
+            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>Мои документы</span>
@@ -175,7 +180,7 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="applications" className="space-y-4 animate-fade-in">
-            <Card>
+            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>Мои заявления</span>
